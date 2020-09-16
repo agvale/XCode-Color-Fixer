@@ -43,7 +43,7 @@ function scanInterfaceBuilderFiles($dir) {
 
 function replaceColorSpace($filePath) {
     $fileContents = file_get_contents($filePath);
-    $replaceContents = str_replace('colorSpace="custom" customColorSpace="sRGB"', 'colorSpace="calibratedRGB"', $fileContents);
+    $replaceContents = str_replace('colorSpace="calibratedRGB"', 'colorSpace="custom" customColorSpace="sRGB"', $fileContents);
     if($replaceContents == $fileContents) {
         return false;
     }
